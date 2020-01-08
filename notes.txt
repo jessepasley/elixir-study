@@ -1,0 +1,36 @@
+from the shell:
+iex : starts interactive elixir repl
+
+
+iex commands:
+h : help on some module or function
+    example: h Enum.reverse/1
+
+i : introspect some value
+    example: i "hello"
+
+iex commands to study:
+b/1
+c/1
+c/3
+cd/1
+clear/0
+flush/0
+import_file/1
+l/1
+ls/0
+ls/1
+nl/2
+pid/1
+pid/3
+pwd/0
+r/1
+recompile/0
+respawn/0
+s/1
+t/1
+v/0
+v/1
+
+functions:
+String.reverse "somethingthatgetreversed"
