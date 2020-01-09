@@ -1,5 +1,8 @@
 from the shell:
 iex : starts interactive elixir repl
+elixir : compile and run a program
+    example: elixir somethingcool.exs
+
 
 
 iex commands:
@@ -8,6 +11,8 @@ h : help on some module or function
 
 i : introspect some value
     example: i "hello"
+
+c : compile and run
 
 iex commands to study:
 b/1
@@ -34,3 +39,7 @@ v/1
 
 functions:
 String.reverse "somethingthatgetreversed"
+
+Pattern matching
+_ underscore denotes wildcard in matching (doesn't match to anything, but passes)
+^ pin operator forces existing value for matching
