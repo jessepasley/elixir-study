@@ -39,7 +39,59 @@ v/1
 
 functions:
 String.reverse "somethingthatgetreversed"
+String.capitalize "capitalizeme"
+Regex.run ~r{[aeiou]}, "caterpillar" -> ["a"]
+Regex.scan ~r{[aeiou]}, "caterpillar" => [["a"],["e"],["i"],["i"],["a"]]
 
 Pattern matching
 _ underscore denotes wildcard in matching (doesn't match to anything, but passes)
 ^ pin operator forces existing value for matching
+
+[ head | tail ] 
+
+Built in Types:
+Value types:
+    Arbitrary-sized integers
+    Floating-point numbers
+    Atoms
+    Ranges
+    Regular expressions
+System types:
+    PIDs and ports
+    References
+Collection types:
+    Tuples
+    Lists
+    Maps
+    Binaries
+
+Integers:
+    Decimals: may contain _ to separate orders of 3
+    No fixed limit
+
+Floating point numbers:
+    16 digits of accuracy
+    Max exponent 10^308
+
+Atoms (names)
+    Use a leading Colon, followed by word or Elixir operator
+    Word contains letters, digits, underscores, and @ signs
+
+Ranges
+    Ranges are represented at start..end, where those are integers
+
+Regular expressions
+    Written as ~r{regexp} or ~r{regexp}opts
+
+TODO: regex examples
+
+Regex options
+f   Force the patter to start to match on the first line of a multiline String
+g   Support named groups
+i   Make matches case sensitive
+m   If the string to be matched contains multiple lines, ^ and $ match thte start and end of these lines.
+    \A and \z continue to match the beginning or end of the string
+s   Allow . to match any newline characters
+U   Normally modifiers like *  and + are greedy, matching as much as possible
+u   Enable unicode-specific patterns like \p
+x   Enable extended mode -- ignore whitespace and comments (# to end of line)
