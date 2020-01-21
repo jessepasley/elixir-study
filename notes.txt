@@ -41,7 +41,11 @@ functions:
 String.reverse "somethingthatgetreversed"
 String.capitalize "capitalizeme"
 Regex.run ~r{[aeiou]}, "caterpillar" -> ["a"]
-Regex.scan ~r{[aeiou]}, "caterpillar" => [["a"],["e"],["i"],["i"],["a"]]
+Regex.scan ~r{[aeiou]}, "caterpillar" -> [["a"],["e"],["i"],["i"],["a"]]
+Regex.split ~r{[aeiou]}, "caterpillar" -> ["c", "t", "rp", "ll", "r"]
+Regex.replace ~r{[aeiou]}, "caterpillar", "*" -> "c*t*rp*ll*r"
+make_ref
+DB.save record, use_transaction: true, logging: "HIGH"
 
 Pattern matching
 _ underscore denotes wildcard in matching (doesn't match to anything, but passes)
@@ -95,3 +99,31 @@ s   Allow . to match any newline characters
 U   Normally modifiers like *  and + are greedy, matching as much as possible
 u   Enable unicode-specific patterns like \p
 x   Enable extended mode -- ignore whitespace and comments (# to end of line)
+
+System Types
+    PID is a reference to a local or remote process, and a port is a reference to a resource for reading or writing
+    PID of current process by calling 'self'
+
+Collection types
+    Ordered collection of values (numbers, symbols, strings, etc)
+    Common to match on :ok for status returns
+
+List Operators
+++ concatenation
+-- set difference
+in membership
+
+
+
+Maps
+%{ key => value, key => value}
+
+How to map over a map:
+%{
+    "SomeKey" => somevalue,
+    "SomeOtherKey" => someothervalue
+}
+|> Enum.map(fn ({param1, param2}) -> {dosomething} end)
+|> Enum.into(%{})
+
+How to filter
